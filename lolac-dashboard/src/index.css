@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply min-h-screen bg-slate-950 text-slate-100 antialiased;
+  background: radial-gradient(circle at top, rgba(10, 182, 255, 0.12), transparent 26%),
+    linear-gradient(180deg, #020617 0%, #050811 58%, #03040d 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(10, 182, 255, 0.32);
+  color: #ffffff;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='light'] body {
+  background: radial-gradient(circle at top, rgba(14, 165, 233, 0.08), transparent 20%),
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 55%, #e2e8f0 100%);
+  color: #0f172a;
+}
+
+:root[data-theme='light'] .glass-card,
+:root[data-theme='light'] .glass-panel {
+  @apply border-slate-300/20 bg-white/70 text-slate-900;
+}
+
+:root[data-theme='light'] .glass-card {
+  box-shadow: 0 0 40px rgba(14, 165, 233, 0.12);
+}
+
+.glass-card {
+  @apply rounded-3xl border border-slate-500/20 bg-slate-900/50 backdrop-blur-2xl shadow-glow;
+}
+
+.glass-panel {
+  @apply rounded-3xl border border-slate-500/15 bg-slate-900/55 backdrop-blur-xl shadow-[0_40px_120px_rgba(0,0,0,0.35)];
+}
+
+.glow-border {
+  box-shadow: 0 0 0 1px rgba(10, 182, 255, 0.16), 0 0 40px rgba(10, 182, 255, 0.08);
+}
